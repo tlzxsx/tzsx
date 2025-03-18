@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>铜中高考倒计时</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('https://q5.itc.cn/images01/20240523/42a71359ef834010bff455ab601a9f21.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            font-family: 'Microsoft Yahei', sans-serif;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(21, 76, 121, 0.1) 0%, rgba(255,255,255,0.6) 100%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 600px;
+            margin: 5vh auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(21, 76, 121, 0.1);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            color: #154c79;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .countdown-box {
+            padding: 20px;
+            background: rgba(21, 76, 121, 0.05);
+            border-radius: 12px;
+        }
+
+        #timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .timer-item {
+            background: rgba(21, 76, 121, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 90px;
+        }
+
+        .timer-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: block;
+            width: 100%;
+        }
+
+        #motivation {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 3vh auto;
+            }
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            #timer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .timer-item {
+                padding: 12px;
+                min-height: 80px;
+            }
+            .timer-number {
+                font-size: 1.6rem;
+            }
+            #motivation {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>距离2025年高考还有</h1>
+        <div class="countdown-box">
+            <div id="timer">
+                <div class="timer-item">
+                    <div class="timer-number" id="days">00</div>
+                    <div class="timer-label">天</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-number" id="hours">00</div>
+                    <div class="timer-label">时</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-number" id="minutes">00</div>
+                    <div class="timer-label">分</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-number" id="seconds">00</div>
+                    <div class="timer-label">秒</div>
+                </div>
+            </div>
+        </div>
+        <div id="motivation"></div>
+    </div>
+
+    <script>
+        const motivations = [
+            "文星门下英才聚，少云馆前壮志酬！",
+            "凤山毓秀催奋进，巴岳钟灵助登科！",
+            "今日寒窗映玄湖，明朝金榜耀铜中！",
+            "承千年书院文脉，创高考辉煌新篇！",
+            "龙舞精神今犹在，考场争锋我当先！",
+            "题海竞渡谁称雄？唯我铜中学子勇！",
+            "晨读惊起三更月，夜战迎来拂晓光！",
+            "毓青山下磨利剑，高考场上试锋芒！",
+            "百年名校底蕴深，今朝看我创辉煌！",
+            "古有巴岳十景美，今看铜中百杰强！"
+        ];
+
+        const targetDate = new Date(2025, 5, 7);
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('motivation').innerHTML = 
+                    "🎉 金榜题名时，勿忘铜中情！<br>——2025届全体教师";
+                return;
+            }
+
+            const days = Math.floor(diff / 86400000);
+            const hours = Math.floor((diff % 86400000) / 3600000);
+            const minutes = Math.floor((diff % 3600000) / 60000);
+            const seconds = Math.floor((diff % 60000) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        function updateMotivation() {
+            const today = new Date().getDate();
+            const index = today % motivations.length;
+            document.getElementById('motivation').innerHTML = `
+                <span style="color:#154c79;">🏫 铜中寄语：</span>${motivations[index]}
+            `;
+        }
+
+        function init() {
+            updateTimer();
+            updateMotivation();
+            setInterval(updateTimer, 1000);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

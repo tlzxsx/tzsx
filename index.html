@@ -3,112 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>铜中数学</title>
-    <style>
-        /* 全局样式（优化铜中校景展示） */
-        body {
-            margin: 0;
-            padding: 20px;
-            background: url('https://q5.itc.cn/images01/20240523/42a71359ef834010bff455ab601a9f21.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: "Microsoft YaHei", sans-serif;
-            min-height: 100vh;
-        }
-
-        /* 背景遮罩（适配学校红墙绿树色调） */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.6);
-            z-index: -1;
-        }
-
-        /* 主容器（校史馆橱窗风格） */
-        .container {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2.5rem;
-            background: rgba(255, 255, 255, 0.88);
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 91, 143, 0.1);
-            backdrop-filter: blur(4px);
-        }
-
-        h1 {
-            color: #154c79; /* 校徽标准色 */
-            margin: 0 0 2rem 0;
-            font-size: 2.2em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-            letter-spacing: 1px;
-        }
-
-        /* 导航按钮（仿校史馆展板设计） */
-        .tool-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .tool-links li {
-            margin: 1.2rem 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .tool-links a {
-            display: block;
-            padding: 1.2rem;
-            background: rgba(255, 255, 255, 0.85);  /* 重点修改部分 */
-            backdrop-filter: blur(8px);
-            color: #2c3e50;  /* 深灰色文字 */
-            text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 91, 143, 0.15); /* 校徽蓝浅色边框 */
-            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-        }
-
-        /* 悬停效果（模拟铜中龙舞飘动） */
-        .tool-links a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(0, 91, 143, 0.25);
-        }
-
-        /* 移动端适配（智慧校园标准） */
-        @media (max-width: 480px) {
-            .container {
-                padding: 1.5rem;
-                margin: 1rem auto;
-                border-radius: 8px;
-            }
-            h1 {
-                font-size: 1.8em;
-                margin-bottom: 1.5rem;
-            }
-            .tool-links a {
-                padding: 1rem;
-                font-size: 1em;
-            }
-        }
-    </style>
+    <title>铜梁中学校高中数学课程创新基地</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>铜中数学</h1>
-        <nav class="tool-links">
+    <!-- 标题部分 -->
+    <header>
+        <div class="header-background">
+            <h1>铜梁中学校高中数学课程创新基地</h1>
+        </div>
+        <nav>
             <ul>
-                <li><a href="sjdm.html">随机点名器</a></li>
-                <li><a href="sdyx.html">数独竞技场</a></li>
-                <li><a href="sxmy.html">数学谜语阁</a></li>
-                <li><a href="djs.html">倒计时</a></li>
-                <li><a href="gkdjs.html">高考倒计时</a></li>
+                <li><a href="#introduction">基地介绍</a></li>
+                <li><a href="#courses">课程建设</a></li>
+                <li><a href="#teacher-training">教师研修</a></li>
+                <li><a href="#research-dynamics">研修动态</a></li>
+                <li><a href="#student-activities">学生活动</a></li>
+                <li><a href="#tao-xingmo">陶兴模名师工作室</a></li>
+                <li><a href="#tools">工具箱</a></li>
             </ul>
         </nav>
-    </div>
+    </header>
+
+    <main>
+        <!-- 基地介绍 -->
+        <section id="introduction" class="card full-width">
+            <div class="card-header">
+                <i class="fas fa-school"></i>
+                <h2>基地介绍</h2>
+            </div>
+            <div class="card-content">
+                <p>铜梁中学校高中数学课程创新基地致力于推动高中数学教育的创新与发展，培养学生的数学思维和解决问题的能力。</p>
+            </div>
+        </section>
+
+        <!-- 课程建设 -->
+        <section id="courses" class="card">
+            <div class="card-header">
+                <i class="fas fa-book-open"></i>
+                <h2>课程建设</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><span class="number-icon red">1</span><a href="course1.html">基础课程：函数与方程</a><span class="publish-date">2023-10-01</span></li>
+                    <li><span class="number-icon red">2</span><a href="course2.html">拓展课程：数学建模</a><span class="publish-date">2023-10-02</span></li>
+                    <li><span class="number-icon red">3</span><a href="course3.html">研究性学习：数学史</a><span class="publish-date">2023-10-03</span></li>
+                    <li><span class="number-icon green">4</span><a href="course4.html">竞赛课程：奥数训练</a><span class="publish-date">2023-10-04</span></li>
+                </ul>
+                <a href="courses.html" class="more-link">更多>>></a>
+            </div>
+        </section>
+
+        <!-- 教师研修 -->
+        <section id="teacher-training" class="card">
+            <div class="card-header">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h2>教师研修</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><span class="number-icon red">1</span><a href="training1.html">2023年秋季教师研修计划</a><span class="publish-date">2023-10-01</span></li>
+                    <li><span class="number-icon red">2</span><a href="training2.html">数学教学研讨会</a><span class="publish-date">2023-10-02</span></li>
+                    <li><span class="number-icon red">3</span><a href="training3.html">优秀教师经验分享</a><span class="publish-date">2023-10-03</span></li>
+                    <li><span class="number-icon green">4</span><a href="training4.html">教学资源库建设</a><span class="publish-date">2023-10-04</span></li>
+                </ul>
+                <a href="teacher-training.html" class="more-link">更多>>></a>
+            </div>
+        </section>
+
+        <!-- 研修动态 -->
+        <section id="research-dynamics" class="card">
+            <div class="card-header">
+                <i class="fas fa-newspaper"></i>
+                <h2>研修动态</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><span class="number-icon red">1</span><a href="dynamic1.html">2023年数学教学创新大赛</a><span class="publish-date">2023-10-01</span></li>
+                    <li><span class="number-icon red">2</span><a href="dynamic2.html">教师研修成果展示</a><span class="publish-date">2023-10-02</span></li>
+                    <li><span class="number-icon red">3</span><a href="dynamic3.html">数学教学改革研讨会</a><span class="publish-date">2023-10-03</span></li>
+                    <li><span class="number-icon green">4</span><a href="dynamic4.html">优秀教学案例分享</a><span class="publish-date">2023-10-04</span></li>
+                </ul>
+                <a href="research-dynamics.html" class="more-link">更多>>></a>
+            </div>
+        </section>
+
+        <!-- 学生活动 -->
+        <section id="student-activities" class="card">
+            <div class="card-header">
+                <i class="fas fa-users"></i>
+                <h2>学生活动</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><span class="number-icon red">1</span><a href="activity1.html">数学竞赛获奖名单</a><span class="publish-date">2023-10-01</span></li>
+                    <li><span class="number-icon red">2</span><a href="activity2.html">数学文化节活动回顾</a><span class="publish-date">2023-10-02</span></li>
+                    <li><span class="number-icon red">3</span><a href="activity3.html">数学建模比赛通知</a><span class="publish-date">2023-10-03</span></li>
+                    <li><span class="number-icon green">4</span><a href="activity4.html">学生数学作品展</a><span class="publish-date">2023-10-04</span></li>
+                </ul>
+                <a href="student-activities.html" class="more-link">更多>>></a>
+            </div>
+        </section>
+
+        <!-- 陶兴模名师工作室 -->
+        <section id="tao-xingmo" class="card">
+            <div class="card-header">
+                <i class="fas fa-user-tie"></i>
+                <h2>陶兴模名师工作室</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><span class="number-icon red">1</span><a href="tao1.html">工作室成员介绍</a><span class="publish-date">2023-10-01</span></li>
+                    <li><span class="number-icon red">2</span><a href="tao2.html">教学研究成果</a><span class="publish-date">2023-10-02</span></li>
+                    <li><span class="number-icon red">3</span><a href="tao3.html">名师公开课安排</a><span class="publish-date">2023-10-03</span></li>
+                    <li><span class="number-icon green">4</span><a href="tao4.html">教学资源分享</a><span class="publish-date">2023-10-04</span></li>
+                </ul>
+                <a href="tao-xingmo.html" class="more-link">更多>>></a>
+            </div>
+        </section>
+
+        <!-- 工具箱 -->
+        <section id="tools" class="card">
+            <div class="card-header">
+                <i class="fas fa-tools"></i>
+                <h2>工具箱</h2>
+            </div>
+            <div class="card-content">
+                <div class="tool-buttons">
+                    <a href="sudoku.html" class="tool-button"><i class="fas fa-puzzle-piece"></i>数独竞技场</a>
+                    <a href="math-riddles.html" class="tool-button"><i class="fas fa-question-circle"></i>数学谜语阁</a>
+                    <a href="random-picker.html" class="tool-button"><i class="fas fa-random"></i>随机点名器</a>
+                    <a href="gaokao-countdown.html" class="tool-button"><i class="fas fa-clock"></i>高考倒计时</a>
+                    <a href="timer.html" class="tool-button"><i class="fas fa-hourglass-start"></i>定时倒计时</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 铜梁中学校高中数学课程创新基地</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
